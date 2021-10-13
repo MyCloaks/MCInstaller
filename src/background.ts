@@ -12,8 +12,8 @@ protocol.registerSchemesAsPrivileged([
 
 async function createWindow() {
   const win = new BrowserWindow({
-    width: 1200,
-    height: 700,
+    width: 854,
+    height: 480,
     webPreferences: {
       nodeIntegration: process.env
         .ELECTRON_NODE_INTEGRATION as unknown as boolean,
@@ -21,10 +21,11 @@ async function createWindow() {
     },
     frame: false,
     darkTheme: true,
-    preload: path.join(__dirname, "preload.ts"),
+    resizable: false,
+    preload: path.join(__dirname, "preload.js"),
   });
 
-  win.openDevTools();
+  win.setBackgroundColor("#202020");
 
   if (process.env.WEBPACK_DEV_SERVER_URL) {
     // Load the url of the dev server if in development mode

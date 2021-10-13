@@ -1,6 +1,7 @@
 {
-  "name": "MCInstaller",
-  "version": "0.1.0",
+  "name": "mcinstaller",
+  "version": "1.0.0",
+  "author": "apap04.com",
   "private": true,
   "scripts": {
     "serve": "vue-cli-service serve",
@@ -18,7 +19,6 @@
     "core-js": "^3.6.5",
     "custom-electron-titlebar": "^3.2.7",
     "postcss": "^7",
-    "tailwindcss": "npm:@tailwindcss/postcss7-compat",
     "vue": "^3.0.0",
     "vue-class-component": "^8.0.0-0",
     "vue-router": "^4.0.0-0"

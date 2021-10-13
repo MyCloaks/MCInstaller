@@ -1,62 +1,11 @@
 <template>
   <header class="titlebar">
     <div class="drag">
+      <div id="window-title">
+        <span>MyCloaks Installer</span>
+      </div>
       <div class="controls">
         <div id="window-controls">
-          <div class="button" id="min-button">
-            <img
-              class="icon"
-              srcset="
-                @/icons/min-w-10.png 1x,
-                @/icons/min-w-12.png 1.25x,
-                @/icons/min-w-15.png 1.5x,
-                @/icons/min-w-15.png 1.75x,
-                @/icons/min-w-20.png 2x,
-                @/icons/min-w-20.png 2.25x,
-                @/icons/min-w-24.png 2.5x,
-                @/icons/min-w-30.png 3x,
-                @/icons/min-w-30.png 3.5x
-              "
-              draggable="false"
-            />
-          </div>
-
-          <div class="button" id="max-button">
-            <img
-              class="icon"
-              srcset="
-                @/icons/max-w-10.png 1x,
-                @/icons/max-w-12.png 1.25x,
-                @/icons/max-w-15.png 1.5x,
-                @/icons/max-w-15.png 1.75x,
-                @/icons/max-w-20.png 2x,
-                @/icons/max-w-20.png 2.25x,
-                @/icons/max-w-24.png 2.5x,
-                @/icons/max-w-30.png 3x,
-                @/icons/max-w-30.png 3.5x
-              "
-              draggable="false"
-            />
-          </div>
-
-          <div class="button" id="restore-button">
-            <img
-              class="icon"
-              srcset="
-                @/icons/restore-w-10.png 1x,
-                @/icons/restore-w-12.png 1.25x,
-                @/icons/restore-w-15.png 1.5x,
-                @/icons/restore-w-15.png 1.75x,
-                @/icons/restore-w-20.png 2x,
-                @/icons/restore-w-20.png 2.25x,
-                @/icons/restore-w-24.png 2.5x,
-                @/icons/restore-w-30.png 3x,
-                @/icons/restore-w-30.png 3.5x
-              "
-              draggable="false"
-            />
-          </div>
-
           <div class="button" id="close-button">
             <img
               class="icon"
@@ -72,6 +21,7 @@
                 @/icons/close-w-30.png 3.5x
               "
               draggable="false"
+              @click="closeWindow"
             />
           </div>
         </div>
@@ -103,17 +53,36 @@ export default {
   display: block;
   position: fixed;
   height: 32px;
-  width: calc(100% - 2px);
-  background: #2b2b2b;
-  padding: 4px;
+  width: calc(100% - 2px); /*Compensate for body 1px border*/
   color: #fff;
+  background: rgba(75, 75, 75, 0.4);
+}
+
+#window-title {
+  grid-column: 1;
+  display: flex;
+  align-items: center;
+  margin-left: 8px;
+  overflow: hidden;
+  font-family: "Segoe UI", sans-serif;
+  font-size: 12px;
+  user-select: none;
+  -webkit-app-region: drag;
+}
+
+#window-title span {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  line-height: 1.5;
 }
 
 .titlebar .drag {
-  width: 100%;
+  display: grid;
+  width: 90%;
   height: 100%;
   -webkit-app-region: drag;
-  -webkit-user-select: none;
+  grid-template-columns: auto 138px;
 }
 
 #window-controls {

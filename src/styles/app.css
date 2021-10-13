@@ -1,43 +1,38 @@
 @tailwind base;
-/* @tailwind components;
-@tailwind utilities; */
-
-* {
-  margin: 0;
-  padding: 0;
-  border: 0;
-  vertical-align: baseline;
-}
-
-html {
-  box-sizing: border-box;
-}
-
-*,
-*:before,
-*:after {
-  box-sizing: inherit;
-}
+@tailwind components;
+@tailwind utilities;
+@import url('https://fonts.googleapis.com/css2?family=Cabin&family=Rubik:wght@300&display=swap');
 
 html,
 body {
   height: 100%;
   margin: 0;
+  font-family: 'Rubik', sans-serif;
 }
 
 body {
-  font-family: "Segoe UI", sans-serif;
   background: #202020;
   color: #fff;
 }
 
 h1 {
-  margin: 0 0 10px 0;
-  font-weight: 600;
-  line-height: 1.2;
+  font-weight: 100;
+  padding: 10px;
 }
 
-p {
-  margin-top: 10px;
-  color: rgba(255, 255, 255, 0.4);
+button {
+  color: white;
+  padding: 4px;
+  background: #303030;
+  border: #494949 1px solid;
+  font-family: 'Rubik', sans-serif!important;
+  user-select: none;
+}
+
+button:hover {
+  background: #424242;
+}
+
+button:active {
+  background: #2e2e2e;
 }
