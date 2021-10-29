@@ -2,8 +2,9 @@ module.exports = {
   pluginOptions: {
     electronBuilder: {
       nodeIntegration: true,
+      contextIsolation: false,
       builderOptions: {
-        appId: "com.apap04.mcinstaller",
+        appId: "tk.mycloaks.mcinstaller",
         productName: "MyCloaks",
         win: {
           target: "nsis",

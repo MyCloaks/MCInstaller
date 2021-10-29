@@ -1,38 +1,394 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-@import url('https://fonts.googleapis.com/css2?family=Cabin&family=Rubik:wght@300&display=swap');
+@font-face {
+  font-family: "Minecraft";
+  src: url("/assets/fonts/Minecraft.ttf");
+}
 
-html,
-body {
-  height: 100%;
+* {
   margin: 0;
-  font-family: 'Rubik', sans-serif;
-}
-
-body {
-  background: #202020;
-  color: #fff;
-}
-
-h1 {
-  font-weight: 100;
-  padding: 10px;
-}
-
-button {
-  color: white;
-  padding: 4px;
-  background: #303030;
-  border: #494949 1px solid;
-  font-family: 'Rubik', sans-serif!important;
+  padding: 0;
   user-select: none;
 }
 
-button:hover {
-  background: #424242;
+html {
+  scroll-behavior: smooth;
 }
 
-button:active {
-  background: #2e2e2e;
+body {
+  background-image: url("https://cdn.discordapp.com/attachments/896367192839434251/902262127606255666/background3.png");
+  background-position: top;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-color: #151515;
+  height: 100%;
+  width: 100%;
 }
+
+.settingsButton button {
+  display: flex;
+  text-shadow: 1px 1px 1px black;
+  border-radius: 5px;
+  color: white;
+  font-size: 26px;
+  padding: 0.1vw 1.6vw 0.1vw 1.6vw;
+  padding-top: 0.6vw;
+  font-family: Minecraft;
+  background-color: #1c1c1c;
+  margin-top: -6vh;
+  margin-left: 45vw;
+  transition: background 200ms, transform 200ms, box-shadow 200ms,
+    text-shadow 200ms;
+}
+
+.settingsButton button:hover {
+  text-shadow: 2px 2px 1px black;
+  background-color: #3f3f3f;
+  transform: translateY(-3px);
+  cursor: pointer;
+  box-shadow: 5px 5px 2px black;
+}
+
+.disclaimer {
+  position: absolute;
+  color: #ff4654;
+  font-family: Arial, Helvetica, sans-serif!important;
+  font-size: 12px;
+  transition: 0.4s;
+  text-align: center;
+  bottom: 1em;
+}
+
+.versionSpan {
+  font-size: 10px;
+  letter-spacing: 0.5px;
+}
+
+button {
+  text-shadow: 1px 1px 1px black;
+  border-radius: 5px;
+  color: white;
+  font-size: 30px;
+  padding: 1vw 1vw 1vw 1vw;
+  margin-bottom: 1em;
+  font-family: Minecraft;
+  background-color: #1c1c1c;
+  transition: background 200ms, transform 200ms, box-shadow 200ms,
+    text-shadow 200ms;
+}
+
+button:hover {
+  text-shadow: 2px 2px 1px black;
+  background-color: #3f3f3f;
+  transform: translateY(-3px);
+  cursor: pointer;
+  box-shadow: 5px 5px 2px black;
+}
+
+.changelogs h1 {
+  color: white;
+  font-family: Minecraft;
+  font-size: 40px;
+  text-align: center;
+  margin-top: 20vh;
+  margin-bottom: 40vh;
+}
+
+.user-count {
+  width: auto;
+  font-size: 16px;
+  font-family: Minecraft;
+  display: flex;
+  margin-left: 85.5%;
+  margin-top: -5vh;
+  color: #ff4654;
+  transition: color 400ms, text-shadow 400ms, transform 400ms;
+}
+
+.circleTotalUsers {
+  color: rgb(0, 255, 0);
+}
+
+.nav {
+  font-family: "Titillium Web";
+  font-weight: 600;
+  margin-top: 7.5vh;
+  margin-bottom: 5em;
+}
+
+.nav * {
+  box-sizing: border-box;
+  transition: all 0.35s ease;
+}
+
+.nav li {
+  display: inline-block;
+  list-style: outside none none;
+  margin: 0.5em 1em;
+  padding: 0;
+  font-family: Minecraft;
+}
+
+.nav a {
+  padding: 0.5em 0.8em;
+  color: white;
+  font-family: Minecraft;
+  font-size: 35px;
+  letter-spacing: 0.5vw;
+  transition: 0.4s;
+  position: relative;
+  text-decoration: none;
+}
+
+.nav a::before,
+.nav a::after {
+  content: "";
+  height: 14px;
+  width: 14px;
+  position: absolute;
+  transition: all 0.35s ease;
+  opacity: 0;
+}
+
+.nav a::before {
+  content: "";
+  right: 0;
+  top: 0;
+  border-top: 3px solid white;
+  border-right: 3px solid white;
+  transform: translate(-100%, 50%);
+}
+
+.nav a:after {
+  content: "";
+  left: 0;
+  bottom: 0;
+  border-bottom: 3px solid white;
+  border-left: 3px solid white;
+  transform: translate(100%, -50%);
+}
+
+.nav a:hover:before,
+.nav a:hover:after {
+  transform: translate(0, 0);
+  opacity: 1;
+}
+
+.nav a:hover {
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.sidenav {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-image: url("https://cdn.discordapp.com/attachments/896367192839434251/902220350241243226/background4.png");
+  background-position: right;
+  background-size: cover;
+  background-repeat: no-repeat;
+  overflow-x: hidden;
+  padding-top: 60px;
+  transition: 0.5s;
+}
+
+.sidenav a {
+  padding: 8px 8px 8px 32px;
+  text-decoration: none;
+  font-size: 25px;
+  color: #818181;
+  display: block;
+  transition: 0.3s;
+  font-family: Minecraft;
+  transition: color 400ms, text-shadow 400ms, transform 400ms;
+}
+
+.sidenav a:hover {
+  cursor: pointer;
+  color: white;
+  text-shadow: -5px 5px 2px black;
+  transform: translateY(-2px);
+}
+
+.openbtn {
+  width: 1px;
+  font-size: 36px;
+  font-family: Minecraft;
+  display: flex;
+  margin-top: 2vh;
+  margin-left: 2vh;
+  color: #ff4654;
+  transition: color 400ms, text-shadow 400ms, transform 400ms;
+}
+
+.openbtn:hover {
+  cursor: pointer;
+  color: white;
+  text-shadow: 5px 5px 2px black;
+  transform: translateY(-2px);
+}
+
+.close-btn {
+  width: 1px;
+  font-size: 45px;
+  font-family: Minecraft;
+  display: flex;
+  margin-left: 95%;
+  margin-top: -2.5vh;
+  color: #ff4654;
+  transition: color 400ms, text-shadow 400ms, transform 400ms;
+}
+
+.close-btn:hover {
+  cursor: pointer;
+  color: white;
+  text-shadow: 5px 5px 2px black;
+  transform: translateY(-2px);
+}
+
+.user-toggle {
+  color: white;
+  text-shadow: 5px 5px 2px black;
+  transform: translateY(-2px);
+}
+
+.sidenav .closebtn {
+  position: absolute;
+  top: 3.5vh;
+  right: 25px;
+  font-size: 26px;
+  margin-left: 50px;
+  font-family: Minecraft;
+}
+
+#main {
+  transition: margin-left 0.5s;
+  padding: 20px;
+}
+
+@media screen and (max-height: 450px) {
+  .sidenav {
+    padding-top: 15px;
+  }
+  .sidenav a {
+    font-size: 18px;
+  }
+}
+
+*:focus,
+*:active {
+  outline: none !important;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.wrapper {
+  display: inline-flex;
+  font-family: Minecraft;
+}
+
+.wrapper .icon {
+  display: flex;
+  position: relative;
+  background-color: #ff4654;
+  border-radius: 50%;
+  margin-right: 2px;
+  width: 50px;
+  height: 50px;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  transition: all 0.2s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+.wrapper .tooltip {
+  position: absolute;
+  top: 0;
+  font-size: 14px;
+  background-color: #ffffff;
+  color: #ffffff;
+  padding: 5px 8px;
+  border-radius: 5px;
+  box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
+  opacity: 0;
+  pointer-events: none;
+  transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+.wrapper .tooltip::before {
+  content: "";
+  height: 8px;
+  width: 8px;
+  background-color: #ffffff;
+  bottom: -3px;
+  left: 50%;
+  transform: translate(-50%) rotate(45deg);
+  transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+.wrapper .icon:hover .tooltip {
+  top: -45px;
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+  -webkit-transform: rotate(360deg);
+  -ms-transform: rotate(360deg);
+  transform: rotate(360deg);
+}
+
+.wrapper .icon:hover span,
+.wrapper .icon:hover .tooltip {
+  text-shadow: 0px -1px 0px rgba(0, 0, 0, 0.1);
+}
+
+.wrapper .discord:hover,
+.wrapper .discord:hover .tooltip,
+.wrapper .discord:hover .tooltip::before {
+  background-color: #7289da;
+  color: #ffffff;
+}
+
+.wrapper .twitter:hover,
+.wrapper .twitter:hover .tooltip,
+.wrapper .twitter:hover .tooltip::before {
+  background-color: #46c1f6;
+  color: #ffffff;
+}
+
+.wrapper .tiktok:hover,
+.wrapper .tiktok:hover .tooltip,
+.wrapper .tiktok:hover .tooltip::before {
+  background-color: #000000;
+  color: white;
+}
+
+.wrapper .github:hover,
+.wrapper .github:hover .tooltip,
+.wrapper .github:hover .tooltip::before {
+  background-color: #333333;
+  color: #ffffff;
+}
+
+.wrapper .youtube:hover,
+.wrapper .youtube:hover .tooltip,
+.wrapper .youtube:hover .tooltip::before {
+  background-color: #de463b;
+  color: #ffffff;
+}
+
+.icon-holder {
+  position: absolute;
+  display: inherit;
+  bottom: 75px;
+  right: 72px;
+}
+
+/* .dragTop {
+    height: 2vw;
+    width: 100%;
+    -webkit-app-region: drag;
+}
+.dragTop:hover {
+    cursor: pointer;
+} */
