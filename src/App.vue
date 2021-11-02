@@ -1,8 +1,8 @@
 <template>
   <div class="dragTop" id="dragTop"></div>
 
-  <div class="close-button" id="close-button">
-    <h1 class="closeBtn" id="closeBtn"><i class="fas fa-times"></i></h1>
+  <div class="close-button" @click="closeApp()">
+    <h1 class="closeBtn"><i class="fas fa-times"></i></h1>
   </div>
 
   <div class="nav-top">
@@ -38,15 +38,19 @@
   <router-view />
 </template>
 
-<script>
+<script lang="js">
+const remote = require("electron").remote;
+
 export default {
-  // methods: {
-  //   homeActive: function () {
-  //     // Implement this later.
-  //   },
-  //   faqActive: function () {
-  //     // Implement this later.
-  //   },
-  // },
+  data() {
+    return {
+      window: remote.getCurrentWindow(),
+    };
+  },
+  methods: {
+    closeApp() {
+      this.window.close();
+    },
+  },
 };
 </script>
