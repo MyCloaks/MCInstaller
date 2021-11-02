@@ -1,5 +1,5 @@
 <template>
-  <div class="home-page-hide hide-page-anim">
+  <div class="home-page-hide">
     <div class="cont_principal" id="cont_principal">
       <div class="cont_centrar" @click="installButton()">
         <p class="texto_centro">INSTALL</p>

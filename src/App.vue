@@ -13,10 +13,11 @@
       <router-link to="/" v-else-if="(this.$router.name = `/faq`)" class="home"
         >Home</router-link
       >
+      <!-- The transition between home and FAQ buttons won't work but whatever /shrug -->
       <router-link
         to="/faq"
         v-if="(this.$route.path = `/faq`)"
-        class="faq active"
+        class="faq"
         id="faq"
         >FAQ</router-link
       >

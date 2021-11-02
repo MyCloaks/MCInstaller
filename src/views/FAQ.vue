@@ -1,5 +1,5 @@
 <template>
-  <div class="faq-page-hide" id="faq-page-hide">
+  <div class="faq-page-hide hide-page-anim" id="faq-page-hide">
     <section class="main-section">
       <div id="faqs" class="container">
         <h2 class="line-heading">Frequently Asked Questions</h2>
