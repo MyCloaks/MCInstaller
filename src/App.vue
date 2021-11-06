@@ -5,23 +5,7 @@
     <h1 class="closeBtn"><i class="fas fa-times"></i></h1>
   </div>
 
-  <div class="nav-top">
-    <div class="nav-text">
-      <router-link to="/" v-if="(this.$router.path = `/`)" class="home active"
-        >Home</router-link
-      >
-      <router-link to="/" v-else-if="(this.$router.name = `/faq`)" class="home"
-        >Home</router-link
-      >
-      <router-link
-        to="/faq"
-        v-if="(this.$route.path = `/faq`)"
-        class="faq active"
-        id="faq"
-        >FAQ</router-link
-      >
-    </div>
-  </div>
+  <Navbar />
 
   <div class="logo-top" id="logo-top">
     <div class="logo-img" id="logo-img">
@@ -31,7 +15,7 @@
       />
       <div class="logo-text" id="logo-text">
         <h1>MyCloaks</h1>
-        <h2>Free Cosme<span>t</span>i<span>c</span>s</h2>
+        <h2>©️ Free Cosme<span>t</span>i<span>c</span>s</h2>
       </div>
     </div>
   </div>
@@ -39,9 +23,17 @@
 </template>
 
 <script lang="js">
+import Navbar from "./components/Navbar.vue"
+var homeBtn = document.getElementById("home");
+var storeBtn = document.getElementById("faq");
+
 const remote = require("electron").remote;
 
 export default {
+  name: "Home",
+  components: {
+    Navbar
+  },
   data() {
     return {
       window: remote.getCurrentWindow(),
